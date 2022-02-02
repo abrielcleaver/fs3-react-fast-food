@@ -6,8 +6,8 @@ import React from 'react';
 export default function OrderImage(props) {
   return <div>
     <img src={`drink-${props.drinkId}.jpg`} width={300} />
-    {/* <img />
-    <img /> */}
+    <img src={`food-${props.foodId}.jpg`} width={300} />
+    <img src={`side-${props.sideId}.jpg`} width={300}/>
   </div>;
 }
 
