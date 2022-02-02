@@ -3,13 +3,11 @@ import { useState } from 'react';
 import DrinkDropdown from './DrinkDropdown';
 import FoodDropdown from './FoodDropdown';
 import SideDropdown from './SideDropdown';
+import OrderImage from './OrderImage';
 // import InstructionsList from './InstructionsList';
 // import InstructionsForm from './FoodImages';
 // import Instruction from './Instruction';
 // import NameInput from './OrderNameInput';
-
-
-
 
 function App() {
     // track some state here.
@@ -18,13 +16,18 @@ function App() {
   const [foodId, setFoodId] = useState(1);
   const [sideId, setSideId] = useState(1);
     // you'll need to track a order name, which starts as the order of your choice.
-
+  // const [orderName, setOrderName] = useState('');
     // finally, you'll need an array of instructions, which could start out as [' '] for example
 
   return (
     <div className="App">
-      {/* here, the Order component takes in foodId, sideId, drinkId as props. It'll use those ids to render pictures correctly. */}
+      {/* here, the OrderImage component takes in foodId, sideId, drinkId as props. It'll use those ids to render pictures correctly. */}
       {/* dynamically update the order name here using state */}
+      <OrderImage 
+        drinkId={drinkId}
+        foodId={foodId}
+        sideId={sideId} 
+      />
       {/* here, the OrderNameInput component takes in the setOrderName state handler function */}
       {/* <OrderNameInput /> */}
       
