@@ -4,10 +4,10 @@ import DrinkDropdown from './DrinkDropdown';
 import FoodDropdown from './FoodDropdown';
 import SideDropdown from './SideDropdown';
 import OrderImage from './OrderImage';
+import OrderNameInput from './OrderNameInput';
 // import InstructionsList from './InstructionsList';
 // import InstructionsForm from './FoodImages';
 // import Instruction from './Instruction';
-// import NameInput from './OrderNameInput';
 
 function App() {
     // track some state here.
@@ -16,35 +16,31 @@ function App() {
   const [foodId, setFoodId] = useState(1);
   const [sideId, setSideId] = useState(1);
     // you'll need to track a order name, which starts as the order of your choice.
-  // const [orderName, setOrderName] = useState('');
+  const [orderName, setOrderName] = useState('Yay');
     // finally, you'll need an array of instructions, which could start out as [' '] for example
 
   return (
     <div className="App">
-      {/* here, the OrderImage component takes in foodId, sideId, drinkId as props. It'll use those ids to render pictures correctly. */}
-      {/* dynamically update the order name here using state */}
-      <OrderImage 
-        drinkId={drinkId}
-        foodId={foodId}
-        sideId={sideId} 
-      />
       {/* here, the OrderNameInput component takes in the setOrderName state handler function */}
-      {/* <OrderNameInput /> */}
+      <OrderNameInput setOrderName={setOrderName}/>
       
       {/* 
           render all three Dropdown components (FoodDropdown, SideDropdown, DrinkDropdown) here. 
           In each Dropdown, pass as props the state handler functions defined above, so that these child components can manipulate parent state 
           */}
-      <div>
+      <div className='dropdowns'>
         <DrinkDropdown setDrinkId={setDrinkId} />
-      </div>
-      <div>
         <FoodDropdown setFoodId={setFoodId}/>
-      </div>
-      <div>
         <SideDropdown setSideId={setSideId} />
       </div>
-
+      {/* dynamically update the order name here using state */}
+      {orderName}, your order is ready!
+      {/* here, the OrderImage component takes in foodId, sideId, drinkId as props. It'll use those ids to render pictures correctly. */}
+      <OrderImage 
+        drinkId={drinkId}
+        foodId={foodId}
+        sideId={sideId} 
+      />
       {/* here, the InstructionsForm component takes in the setInstructions state handler function and the slogans array that live in state */}
  
       {/* here, the InstructionList component takes the array of slogans that lives in state */}
