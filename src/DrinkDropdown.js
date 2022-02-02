@@ -10,9 +10,9 @@ export default function DrinkDropdown({ setDrinkId }) {
    
   return <div>
     <select onChange={handleChange}>
-      <option>Water</option>
-      <option>Soda</option>
-      <option>Juice</option>
+      <option value="1">Water</option>
+      <option value="2">Coffee</option>
+      <option value="3">Soda</option>
     </select>
   </div>;
 }
