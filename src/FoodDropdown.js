@@ -10,9 +10,9 @@ export default function FoodDropdown({ setFoodId }) {
    
   return <div>
     <select onChange={handleChange}>
-      <option>Burger</option>
-      <option>Pizza</option>
-      <option>Wings</option>
+      <option value="1">Burger</option>
+      <option value="2">Pizza</option>
+      <option value="3">Sandwich</option>
     </select>
   </div>;
 }

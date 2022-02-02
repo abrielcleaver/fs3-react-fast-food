@@ -9,9 +9,9 @@ export default function SideDropdown({ setSideId }) {
   }
   return <div>
     <select onChange={handleChange}>
-      <option>Fries</option>
-      <option>Onion Rings</option>
-      <option>Third Side</option>
+      <option value="1">Potato Wedges</option>
+      <option value="2">Onion Rings</option>
+      <option value="3">Salad</option>
     </select>
   </div>;
 }
