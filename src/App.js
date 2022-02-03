@@ -9,6 +9,8 @@ import OrderNameInput from './OrderNameInput';
 // import InstructionsForm from './FoodImages';
 // import Instruction from './Instruction';
 
+import Header from './services/Header/Header';
+
 function App() {
     // track some state here.
     // You'll need to keep track of a foodId, sideId, and drinkId. All these start out as 1
@@ -21,6 +23,8 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
+      
       {/* here, the OrderNameInput component takes in the setOrderName state handler function */}
       <OrderNameInput setOrderName={setOrderName}/>
       
