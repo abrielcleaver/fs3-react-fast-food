@@ -5,9 +5,8 @@ import FoodDropdown from './FoodDropdown';
 import SideDropdown from './SideDropdown';
 import OrderImage from './OrderImage';
 import OrderNameInput from './OrderNameInput';
-// import InstructionsList from './InstructionsList';
-// import InstructionsForm from './FoodImages';
-// import Instruction from './Instruction';
+import InstructionsList from './InstructionsList';
+import InstructionsForm from './InstructionForm';
 
 import Header from './services/Header/Header';
 
@@ -19,7 +18,8 @@ function App() {
   const [sideId, setSideId] = useState(1);
     // you'll need to track a order name, which starts as the order of your choice.
   const [orderName, setOrderName] = useState('Yay');
-    // finally, you'll need an array of instructions, which could start out as [' '] for example
+    // finally, you'll need an array of instructions, which could start out as ['extra mayo'] for example
+  const [instructions, setInstructions] = useState(['No tomato', 'No cheese']);
 
   return (
     <div className="App">
@@ -37,6 +37,15 @@ function App() {
         <FoodDropdown setFoodId={setFoodId}/>
         <SideDropdown setSideId={setSideId} />
       </div>
+      {/* here, the InstructionsForm component takes in the setInstructions state handler function and the slogans array that live in state */}
+      <div>
+        <InstructionsForm 
+          instructions={instructions} 
+          setInstructions={setInstructions} />
+        <div>
+          <InstructionsList instructions={instructions} />
+        </div>
+      </div>
       {/* dynamically update the order name here using state */}
       {orderName}, your order is ready!
       {/* here, the OrderImage component takes in foodId, sideId, drinkId as props. It'll use those ids to render pictures correctly. */}
@@ -45,7 +54,6 @@ function App() {
         foodId={foodId}
         sideId={sideId} 
       />
-      {/* here, the InstructionsForm component takes in the setInstructions state handler function and the slogans array that live in state */}
  
       {/* here, the InstructionList component takes the array of slogans that lives in state */}
 
